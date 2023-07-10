@@ -42,14 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/athoney/learning-micro/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,65 +57,64 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Learning Micro',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
+        
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Acknowledgements',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Adapted From TACoS IX',
+                href: 'https://community.pages.ssc.dev/wycs/tacos/2023/cs-website/docs/day1/',
+              },
+              {
+                label: 'Makecode activities',
+                href: 'https://microbit.org/projects/make-it-code-it/',
+              },
+              {
+                label: 'CEDAR Lab',
+                href: 'https://uwcedar.github.io/digiflyer#slide=1',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Makecode Resources',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Blocks Documentation',
+                href: 'https://makecode.microbit.org/blocks',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Makecode FAQ',
+                href: 'https://makecode.microbit.org/faq',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Makecode Docs',
+                href: 'https://makecode.microbit.org/docs',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'More Micro:bit Material',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Intro CS w/ Micro:bit',
+                href: 'https://makecode.microbit.org/v0/--docs#book:/courses/csintro/SUMMARY',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Python User Guide',
+                href: 'https://microbit.org/get-started/user-guide/python/',
+              },
+              {
+                label: 'Javscript Tutorial',
+                href: 'https://makecode.microbit.org/courses/blocks-to-javascript/hello-javascript',
               },
             ],
           },
