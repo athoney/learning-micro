@@ -29,7 +29,7 @@ The values on each side of a **boolean expression** can be numbers, like in the 
 
 One of the primary reasons **boolean expressions** are useful is to help _control the flow_ of our programs.
 
-## Control Flow - part 1
+## Control Flow: If Statements
 
 _Control Flow_ is the path your program takes when it is being run.  Often, we want different things to happen when certain _conditions_ are met. For example, we can use light level as an input to make an automatic light. _If_ the Micro:bit senses that it is really dark, _then_ the Micro:bit should turn on its lights, _else if_ the Micro:bit senses that it is really bright, _then_ it should turn off its lights. The light level is our _condition_, and there are two paths our program can take. It can turn on the lights or turn off the lights. 
 
