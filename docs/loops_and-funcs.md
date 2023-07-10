@@ -96,6 +96,6 @@ Take a minute to read over the code provided. Can you understand what is going o
 You may notice that some code has been repeated twice in different places. This code spawns a new pollen LED. Let's wrap that code in a function. *Remember* we can use functions to reduce duplicate code. This is helpful during the debugging and feature extension process because you only have to look in one place to update/revise code. Create a new function that describes the code it encapsulates, something like `make-pollen`will do. Grab the code to make a new pollen sprite and place it inside this new function. Finally, replace all the places this code was with the `call make-pollen` block to use your new function.
 
 ### Step 2 - Simplify code
-Another great use for functions is to increase the readability of code. The large if statement at the top of the forever block 
+Another great use for functions is to increase the readability of code. The large if statement at the top of the forever block controls the movement of the bee sprite. However, that is not immediately obvious. Let's improve the readability of this code by making a `move` function that will house our movement code.  
 
 
