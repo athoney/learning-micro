@@ -33,6 +33,68 @@ The `while` loop will keep repeating the blocks inside of it until its **boolean
 
 By now you have noticed that when we start a new program, a `forever` block is in the editor automatically.  The `forever` block is actually just a loop that runs forever! Any blocks that are within the `forever` block will continue to execute as long as the micro:bit has power. The example above will show a beating heart until your micro:bit dies. 
 
+## Activity: Busy Bee
+In this activity, we are going to put our knowledge of loops to the test! We are going to create a simple bee sprite that buzzes around the Micro:bit in search of nectar.
+
+### Setup
+You'll need these things:
+1. 1 micro:bit *for the bee*
+2. 1 micro:bit cable *for the hive*
+3. micro:bit cable
+4. [Bumblebee Code from Day 2](https://makecode.microbit.org/_2Fc1EWYiVajJ)
+5. [Completed Hive from Day 3](https://makecode.microbit.org/_7avH5JXzwDJx)
+
+### Step 1 - Create a `bee` sprite
+First, we will create a bee variable. Let's set that variable to `create sprite at x:2 y:2`. This will add an LED to the center of the micro:bit to represent the bee. Now, let's add some movement to the bee. Grab an if statement, place it in the `forever` block, and expand it so that their is four conditions (one if and three else ifs). We will the input `is tilt left gesture`, `is tilt right gesture`, `is logo up gesture`, and `is logo down gesture` boolean values to move the bee. In each section of the if statement, use a `bee change _ by _`. Experiment with what you think these values will be, then check your code below. You may find it difficult to control the bee since it moves so fast. You can fix this by adding a `pause _ ms` block to the end of each if statement.
+
+<details>
+<summary>Click to see code</summary>
+
+![step 1](/img/bee_and_nectar/step1.png)
+</details>
+
+### Step 2 - Create a `nectar` sprite
+Our bee looks awesome, and it flies around the screen quickly! However, there is no nectar for the bee. Let's add that now. Create a nectar variable and set it to `create sprite at x:pick random 0 to 4 y: pick random 0 to 4` so that it is in a random spot. It is hard to tell the bee and nectar apart, so let's add a `nectar set brightness to 10` and a `nectar set blink to 300`.
+
+<details>
+<summary>Click to see code</summary>
+
+![step 2](/img/bee_and_nectar/step2.png)
+</details>
+
+### Step 3 - Collect nectar
+Now that we have a bee and nectar, we need to collect the nectar. Start by creating a variable named collected-nectar and set it to 0 in the on start block. Then, add another `if statement` to the forever block. It should say `if is nectar touching bee`. This block can be found in the game tab as `if sprite touching _`. In the if statement, add a `change collected-nectar by 1` block. This will increase the value of collected-nectar by 1 each time the bee touches the nectar. Finally, add a `delete nectar` block to the if statement. This will remove the nectar from the screen once it is collected.
+
+<details>
+<summary>Click to see code</summary>
+
+![step 3](/img/bee_and_nectar/step3.png)
+</details>
+
+### Step 4 - Spawn nectar
+Our game is looking good, but we have not added a way to create more nectar. Let's make the new nectar appear in a random spot. Grab a `every 500 ms` block from the loops tab. Replace the 500 ms with `pick random 0 to 10`. Change the 0 and 10 to 2000 and 5000. Now, this loop will run every 2 to 5 seconds. Inside the loop, add a `delete nectar` block, `create sprite at x:pick random 0 to 4 y: pick random 0 to 4` block, `nectar set brightness to 10`, and `nectar set blink to 300`. This will delete the old nectar, create a new nectar in a random spot, and make it blink.
+
+<details>
+<summary>Click to see code</summary>
+
+![step 4](/img/bee_and_nectar/step4.png)
+</details>
+
+### Step 5 - Send collected nectar
+Now that we have a way to collect nectar, we need to send it to the hive. Let's send nectar when we press a+b. Grab an `on button a+b` block from the input tab. Inside the block, add a `radio send number collected-nectar` block. This will send the value of collected-nectar to the hive. Make sure to set collected-nectar back to zero after you send the value. Since we are using radio communication, let's add a `set radio group` block to `on start`. *Remember the group you use, otherwise the bee won't be able to talk to the hive.*
+
+<details>
+<summary>Click to see code</summary>
+
+![step 5](/img/bee_and_nectar/step5.png)
+</details>
+
+### Step 6 - Test it!
+The last step of this activity is to test it! Download the code to your micro:bit and see if you can collect nectar and send it to the hive. If you are having trouble, check your code against the code below. Make sure the hive is on the same radio group as the bee.
+- [Bee code](https://makecode.microbit.org/_HwV8p4LgRRhX)
+- [Hive code](https://makecode.microbit.org/_KmJ3opTL08mi)
+
+
 ## Functions
 
 ### What is a function?
@@ -88,14 +150,27 @@ Notice that the `return` block in our example is flat on the bottom. It doesn't 
 For this activity, you will need:
 - 1 Micro:bit
 - 1 Micro:bit cable
-- [This starter code](https://makecode.microbit.org/_URCfssHg6AAH)
+- [Final Bee code](https://makecode.microbit.org/_HwV8p4LgRRhX)
 
 ### Step 1 - Reduce duplicate code
-Take a minute to read over the code provided. Can you understand what is going on? It appears that there is a bee LED and a pollen LED. You can move the bee around by tilting the Micro:bit in the direction you want it to move. You can collect pollen by moving the bee LED onto the pollen LED. Finally, you can see how much pollen you have collected by shaking the Micro:bit. 
+You may notice that some code has been repeated twice in different places. This code spawns a new nectar LED. Let's wrap that code in a function. *Remember* we should use functions to reduce duplicate code. This is helpful during the debugging and feature extension process because you only have to look in one place to update/revise code. Create a new function that describes the code it encapsulates, something like `new-nectar` will do. Grab the code to make a new pollen sprite and place it inside this new function. Finally, replace all the places this code was with the `call new-nectar` block to use your new function.
 
-You may notice that some code has been repeated twice in different places. This code spawns a new pollen LED. Let's wrap that code in a function. *Remember* we can use functions to reduce duplicate code. This is helpful during the debugging and feature extension process because you only have to look in one place to update/revise code. Create a new function that describes the code it encapsulates, something like `make-pollen`will do. Grab the code to make a new pollen sprite and place it inside this new function. Finally, replace all the places this code was with the `call make-pollen` block to use your new function.
+<details>
+<summary>Hint</summary>
+
+![New nectar function](/img/functions/step1.png)
+</details>
 
 ### Step 2 - Simplify code
-Another great use for functions is to increase the readability of code. The large if statement at the top of the forever block controls the movement of the bee sprite. However, that is not immediately obvious. Let's improve the readability of this code by making a `move` function that will house our movement code.  
+Another great use for functions is to increase the readability of code. The large if statement at the top of the forever block controls the movement of the bee sprite. However, that is not immediately obvious. Let's improve the readability of this code by making a `move` function that will house our movement code. Take the `if statement` and `pause` block and move them to a function named move. Remember to call your new function after removing the code.
+
+<details>
+<summary>Hint</summary>
+
+![New nectar function](/img/functions/step2.png)
+</details>
+
+### Step 3 - Final code with functions
+Check your final code here: [Final Bee code with functions](https://makecode.microbit.org/_Pr1AaDWEvEE4)
 
 
