@@ -41,8 +41,8 @@ You'll need these things:
 1. 1 micro:bit *for the bee*
 2. 1 micro:bit cable *for the hive*
 3. micro:bit cable
-4. [Bumblebee Code from Day 2](https://makecode.microbit.org/_2Fc1EWYiVajJ)
-5. [Completed Hive from Day 3](https://makecode.microbit.org/_7avH5JXzwDJx)
+4. [Bumblebee Code](https://makecode.microbit.org/_2Fc1EWYiVajJ)
+5. [Completed Hive](https://makecode.microbit.org/_7avH5JXzwDJx)
 
 ### Step 1 - Create a `bee` sprite
 First, we will create a bee variable. Let's set that variable to `create sprite at x:2 y:2`. This will add an LED to the center of the micro:bit to represent the bee. Now, let's add some movement to the bee. Grab an if statement, place it in the `forever` block, and expand it so that their is four conditions (one if and three else ifs). We will the input `is tilt left gesture`, `is tilt right gesture`, `is logo up gesture`, and `is logo down gesture` boolean values to move the bee. In each section of the if statement, use a `bee change _ by _`. Experiment with what you think these values will be, then check your code below. You may find it difficult to control the bee since it moves so fast. You can fix this by adding a `pause _ ms` block to the end of each if statement.

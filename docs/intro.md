@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Hello World
 
-Welcome to day 1 of The Artful Craft of Science! Today we are going to take the first steps in discovering the best parts of computer science. We are going to start with an introduction to computer science and the Micro:bit, and create our first Micro:bit program. Then, we'll introduce the sensor:bit and the sensors and try them out!
+Welcome to Learning Micro! Today we are going to take the first steps in discovering the best parts of computer science. We are going to start with an introduction to computer science and the Micro:bit, and create our first Micro:bit program. Then, we'll introduce the sensor:bit and the sensors and try them out!
 
 ## What is Computer Science?
 
@@ -137,6 +137,20 @@ If you are using a recent version of the Chrome browser, you can connect your Mi
 If you are struggling to connect your micro:bit, follow the steps that MakeCode suggests:
 
 First, check your connection - there should be a yellow light that appears on the back of the micro:bit when it's connected to your computer. If you don't see a yellow light, try a different cable. If the connection seems good, you probably need to update the firmware on your micro:bit. To update the firmware, follow the directions at [https://makecode.microbit.org/device/usb/webusb/troubleshoot](https://makecode.microbit.org/device/usb/webusb/troubleshoot).
+
+##### Chrome on Linux
+New Linux versions have known issues using webUSB. These steps are **ADVANCED** and require sudo access. Follow these steps to enable webUSB on Linux:
+1. Create a new file in /etc/udev/rules
+   - `sudo vi /etc/udev/rules.d/50-microbit.rules`
+2. Add the following:
+   - `SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="plugdev"`
+3. Save the file
+4. Add current user to plugdev group
+   - `sudo usermod -a -G plugdev $USER`
+5. Reload udev rules
+    - `sudo udevadm control --reload-rules`
+6. Stop Chrome, unplug microbit.
+7. Start Chome, plug in microbit.
 
 #### Flashing with All Browsers
 

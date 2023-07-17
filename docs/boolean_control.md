@@ -82,8 +82,8 @@ In their hives, bees turn pollen into honey. We can use **if statements** and **
 
 ### Setup
 For this activity, you'll need two micro:bits, two battery packs, and the code from yesterday. In case you need it, you can get that code here:
-- [Bumblebee Code from Day 2](https://makecode.microbit.org/_2Fc1EWYiVajJ)
-- [Hive Code from Day 2](https://makecode.microbit.org/_hXwEErCAY0a5)
+- [Bumblebee Code](https://makecode.microbit.org/_2Fc1EWYiVajJ)
+- [Hive Code](https://makecode.microbit.org/_hXwEErCAY0a5)
 
 For now, we'll just be updating the hive code, so go ahead and flash the bumblebee code to one of your micro:bits, then open the hive code and get ready to program! 
 
@@ -147,9 +147,9 @@ You may have noticed that our `if` block is missing a very important part... We 
 - The first conditional statement should look something like this: `if there is less than or equal to 0 honey, then show an empty honey pot`
 - The final conditional statement should look something like this: `if there is equal to or more than x honey, then show a honey pot that is full`, where `x` is the highest amount of honey that you can fit inside your jar. 
 
-Go try that out, flash your code, test things out, and then come back to check your answers. Remember that you'll need the [Bumblebee Code from Day 2](https://makecode.microbit.org/_2Fc1EWYiVajJ) to communicate with the hive. Good luck! 
+Go try that out, flash your code, test things out, and then come back to check your answers. Remember that you'll need the [Bumblebee Code](https://makecode.microbit.org/_2Fc1EWYiVajJ) to communicate with the hive. Good luck! 
 
-When you're finished, open [Completed Hive from Day 3](https://makecode.microbit.org/_fuLEgw8Tyhqd) to see an example of what your completed hive program should look like. 
+When you're finished, open [Completed Hive from](https://makecode.microbit.org/_fuLEgw8Tyhqd) to see an example of what your completed hive program should look like. 
 
 ## Pass the Duck
 Let's build a multi-player game called pass the duck. This game will resemble hot potato, and we will program the whole game from the ground up.
